@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rotating cube</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+.cube{
+   transform-style: preserve-3d;
+    position: relative;
+    left: 50%;
+    top:100px;
+    height: 500px;
+    width: 500px;
+
+     animation: spin 8s infinite ease-in-out;
+}
+
+@keyframes spin{
+    0%{  transform: rotateX(20deg)  rotateY(0deg);}
+    10%{  transform:rotateX(20deg)   rotateY(90deg);}
+    20%{  transform:rotateX(20deg)   rotateY(180deg);}
+    30%{  transform: rotateX(20deg) rotateY(270deg);}
+    40%{  transform:  rotateY(20deg) rotateY(360deg);}
+    50%{  transform:  rotateY(20deg) rotateX(0deg);}
+    60%{  transform:  rotateY(20deg) rotateX(90deg);}
+    70%{  transform:  rotateY(20deg) rotateX(180deg);}
+    80%{  transform:  rotateY(20deg) rotateX(270deg);}
+    90%{  transform:  rotateY(20deg) rotateX(360deg);}
+}
+
+
+        .box{
+            height: 500px;
+            width:500px;
+            border: 1px solid black;
+            position: absolute;
+            text-align: center;
+            line-height: 100px;
+    background-color: rgba(255, 0, 0, 0.322);
+        }
+        
+        
+        
+        .box img{
+          width: 100%;
+          aspect-ratio: 1/1;
+        }
+        .left{
+         margin-left:-250px;
+          transform: rotateY(90deg);
+        }
+        .right{
+            margin-left: 250px;
+            transform: rotateY(-90deg) ;
+        }
+        .front{
+            transform: translateZ(-250px);
+        }
+        .back{
+            transform: translateZ(250px) rotateY(180deg);
+
+        }
+        .top{
+            transform: rotateX(90deg);
+            margin-top:250px;
+            background-color: white;
+        }
+        .bottom{
+            transform: rotateX(90deg);
+            margin-top:-250px;
+            background-color: black;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="cube">
+        <div class="box left">left</div>
+        <div class="box right">right</div>
+        <div class="box front">front</div>
+        <div class="box back">black</div>
+        <div class="box top">top</div>
+        <div class="box bottom">Bottom</div>
+    </div>
+    
+</body>
+</html>
